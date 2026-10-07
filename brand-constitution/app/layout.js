@@ -1,4 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import "@cometchat/chat-uikit-react/styles";
+import "./collaborate.css";
 import "./globals.css";
 
 const geistSans = Geist({

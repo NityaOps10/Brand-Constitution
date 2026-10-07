@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const STYLES = [
   { id: "editorial", label: "Editorial", bar: "bg-amber-700" },
@@ -50,6 +51,14 @@ const Spinner = () => (
 );
 const Label = ({ children }) => (
   <p className="text-[11px] font-semibold uppercase tracking-widest text-stone-500">{children}</p>
+);
+const DiscussSection = ({ section }) => (
+  <Link
+    href={`/collaborate?section=${encodeURIComponent(section)}`}
+    className="inline-flex items-center rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs font-medium text-stone-700 transition hover:border-stone-500 hover:text-stone-900"
+  >
+    Discuss this section
+  </Link>
 );
 const Field = ({ label, value, onChange, rows = 2 }) => (
   <div className="mt-4">
@@ -438,7 +447,10 @@ ${kit.linkedin_post}
                 ["Still unclear", result.understanding?.what_is_unclear],
               ].map(([k, v]) => (
                 <div key={k} className="rounded-2xl border border-stone-200 bg-white/75 p-4 shadow-sm">
-                  <Label>{k}</Label>
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <Label>{k}</Label>
+                    {k === "Likely audience" && <DiscussSection section="Target Audience" />}
+                  </div>
                   <p className="mt-2 text-sm text-stone-700">{v}</p>
                 </div>
               ))}
@@ -514,7 +526,13 @@ ${kit.linkedin_post}
                   )}
 
                   <div className="mt-6 grid gap-6 sm:grid-cols-2">
-                    <div><Label>Positioning</Label><p className="mt-2 text-sm text-stone-700">{d.positioning}</p></div>
+                    <div>
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <Label>Positioning</Label>
+                        <DiscussSection section="Positioning" />
+                      </div>
+                      <p className="mt-2 text-sm text-stone-700">{d.positioning}</p>
+                    </div>
                     <div><Label>Value proposition</Label><p className="mt-2 text-sm text-stone-700">{d.value_proposition}</p></div>
                   </div>
 
@@ -543,9 +561,15 @@ ${kit.linkedin_post}
                     </div>
                   </div>
 
-                  <blockquote className="mt-8 border-l-4 border-stone-300 pl-4 font-serif text-lg italic text-stone-700">
-                    {d.voice_sample}
-                  </blockquote>
+                  <div className="mt-8">
+                    <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                      <Label>Brand Voice</Label>
+                      <DiscussSection section="Brand Voice" />
+                    </div>
+                    <blockquote className="border-l-4 border-stone-300 pl-4 font-serif text-lg italic text-stone-700">
+                      {d.voice_sample}
+                    </blockquote>
+                  </div>
 
                   <div className="mt-8">
                     <Label>Visual direction</Label>
@@ -681,7 +705,10 @@ ${kit.linkedin_post}
                 <Field label="Instagram caption" value={kit.instagram_caption} rows={4} onChange={(v) => setKit({ ...kit, instagram_caption: v })} />
                 <Field label="LinkedIn post" value={kit.linkedin_post} rows={6} onChange={(v) => setKit({ ...kit, linkedin_post: v })} />
 
-                <h3 className="mt-8 font-serif text-xl font-semibold">Voice</h3>
+                <div className="mt-8 flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="font-serif text-xl font-semibold">Voice</h3>
+                  <DiscussSection section="Brand Voice" />
+                </div>
                 <div className="mt-3 grid gap-4 sm:grid-cols-2">
                   <div className="rounded-xl bg-emerald-50 p-4">
                     <p className="text-xs font-semibold text-emerald-900">DO</p>

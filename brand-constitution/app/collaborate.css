@@ -1,0 +1,504 @@
+.collaborate-shell {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100dvh;
+  min-height: 420px;
+  overflow: hidden;
+  color: #292524;
+  background: #fafaf9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.collaborate-topbar {
+  display: flex;
+  flex: 0 0 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid #e7e5e4;
+  background: #fff;
+}
+
+.collaborate-context-banner {
+  flex: 0 0 auto;
+  border-bottom: 1px solid #e7e5e4;
+  padding: 10px 24px;
+  color: #57534e;
+  background: #f5f5f4;
+  font-size: 13px;
+}
+
+.collaborate-context-banner strong {
+  color: #292524;
+}
+
+.collaborate-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.collaborate-mark {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  color: white;
+  background: #292524;
+  font-family: Georgia, serif;
+  font-size: 12px;
+}
+
+.collaborate-label {
+  color: #78716c;
+  font-size: 12px;
+}
+
+.collaborate-workspace {
+  display: grid;
+  flex: 1;
+  min-height: 0;
+  grid-template-columns: minmax(230px, 290px) minmax(0, 1fr);
+}
+
+.collaborate-sidebar {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  border-right: 1px solid #e7e5e4;
+  background: #fff;
+}
+
+.collaborate-profile {
+  padding: 20px 16px;
+  border-bottom: 1px solid #e7e5e4;
+}
+
+.collaborate-profile label {
+  display: block;
+  margin-bottom: 8px;
+  color: #78716c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.collaborate-profile-row {
+  display: flex;
+  gap: 8px;
+}
+
+.collaborate-profile-row select {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid #d6d3d1;
+  border-radius: 9px;
+  padding: 8px;
+  color: #292524;
+  background: #fff;
+}
+
+.collaborate-profile-row button {
+  border: 0;
+  border-radius: 9px;
+  padding: 8px 12px;
+  color: #fff;
+  background: #292524;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.collaborate-profile-row button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.collaborate-current-profile {
+  margin: 10px 0 0;
+  color: #78716c;
+  font-size: 12px;
+}
+
+.collaborate-peer-list {
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 10px;
+}
+
+.collaborate-peer-list h1 {
+  margin: 0 8px 10px;
+  color: #78716c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.collaborate-peer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 9px;
+  color: #44403c;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.collaborate-peer:hover,
+.collaborate-peer.is-selected {
+  background: #f5f5f4;
+}
+
+.collaborate-presence {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-radius: 50%;
+  background: #a8a29e;
+}
+
+.collaborate-presence.is-online {
+  background: #16a34a;
+}
+
+.collaborate-peer-status {
+  margin-left: auto;
+  color: #a8a29e;
+  font-size: 11px;
+}
+
+.collaborate-demo-note {
+  margin: 0;
+  border-top: 1px solid #e7e5e4;
+  padding: 12px 16px;
+  color: #78716c;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.collaborate-muted {
+  margin: 0;
+  padding: 8px;
+  color: #78716c;
+  font-size: 13px;
+}
+
+.collaborate-chat-panel {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #fafaf9;
+}
+
+.collaborate-chat {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+.collaborate-chat-header {
+  display: flex;
+  flex: 0 0 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid #e7e5e4;
+  padding: 0 20px;
+}
+
+.collaborate-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.collaborate-search-button {
+  border: 1px solid #d6d3d1;
+  border-radius: 9px;
+  padding: 8px 10px;
+  color: #292524;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.collaborate-search-button:focus-visible {
+  outline: 3px solid #a8a29e;
+  outline-offset: 2px;
+}
+
+.collaborate-chat-recipient {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+}
+
+.collaborate-chat-header h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.collaborate-chat-header p {
+  margin: 3px 0 0;
+  color: #78716c;
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.collaborate-chat-header .cometchat-call-buttons {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.collaborate-call-action {
+  min-height: 36px;
+  border: 0;
+  border-radius: 9px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.collaborate-call-action:focus-visible,
+.collaborate-end-call:focus-visible {
+  outline: 3px solid #a8a29e;
+  outline-offset: 2px;
+}
+
+.collaborate-voice-action {
+  background: #166534;
+}
+
+.collaborate-video-action {
+  background: #1d4ed8;
+}
+
+.collaborate-call-action:hover {
+  filter: brightness(0.92);
+}
+
+.collaborate-call-status {
+  display: flex;
+  min-height: 46px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #e7e5e4;
+  padding: 6px 20px;
+  color: #44403c;
+  background: #f5f5f4;
+  font-size: 13px;
+}
+
+.collaborate-call-status.is-ringing,
+.collaborate-call-status.is-connecting {
+  color: #854d0e;
+  background: #fefce8;
+}
+
+.collaborate-call-status.is-connected {
+  color: #166534;
+  background: #f0fdf4;
+}
+
+.collaborate-call-status.is-rejected,
+.collaborate-call-status.is-failed {
+  color: #991b1b;
+  background: #fef2f2;
+}
+
+.collaborate-end-call {
+  min-height: 34px;
+  border: 0;
+  border-radius: 8px;
+  padding: 7px 12px;
+  color: #fff;
+  background: #b91c1c;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.collaborate-end-call:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.collaborate-search-panel {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+  background: #fff;
+}
+
+.collaborate-search-panel .cometchat-search {
+  width: 100%;
+  min-height: 0;
+}
+
+.collaborate-message-list {
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.collaborate-message-composer {
+  flex: 0 0 auto;
+  border-top: 1px solid #e7e5e4;
+  background: #fff;
+}
+
+.collaborate-empty {
+  display: grid;
+  height: 100%;
+  align-content: center;
+  justify-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.collaborate-empty h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+
+.collaborate-empty p {
+  max-width: 390px;
+  color: #78716c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.collaborate-error {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  max-width: min(420px, calc(100% - 24px));
+  margin: 0;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  padding: 10px 12px;
+  color: #991b1b;
+  background: #fef2f2;
+  font-size: 13px;
+}
+
+.collaborate-loading {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  color: #78716c;
+}
+
+@media (max-width: 680px) {
+  .collaborate-topbar {
+    flex-basis: 52px;
+    padding: 0 14px;
+  }
+
+  .collaborate-context-banner {
+    padding: 9px 14px;
+    font-size: 12px;
+  }
+
+  .collaborate-workspace {
+    grid-template-columns: minmax(120px, 34%) minmax(0, 1fr);
+  }
+
+  .collaborate-profile {
+    padding: 14px 10px;
+  }
+
+  .collaborate-profile-row {
+    flex-direction: column;
+  }
+
+  .collaborate-peer {
+    gap: 6px;
+    padding: 10px 6px;
+    font-size: 12px;
+  }
+
+  .collaborate-peer-status {
+    display: none;
+  }
+
+  .collaborate-demo-note {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .collaborate-chat-header {
+    flex-basis: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+  }
+
+  .collaborate-header-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .collaborate-search-button,
+  .collaborate-chat-header .cometchat-call-buttons {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .collaborate-chat-header .cometchat-call-buttons > * {
+    flex: 1;
+  }
+
+  .collaborate-call-action {
+    width: 100%;
+    padding: 8px 6px;
+    font-size: 11px;
+  }
+
+  .collaborate-call-status {
+    padding: 6px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collaborate-shell *,
+  .collaborate-shell *::before,
+  .collaborate-shell *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
