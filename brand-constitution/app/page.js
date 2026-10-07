@@ -337,6 +337,10 @@ ${kit.linkedin_post}
             <span className="font-serif text-lg font-semibold">Brand Constitution</span>
           </div>
           <div className="flex items-center gap-3">
+            <Link href="/collaborate"
+              className="rounded-full border border-stone-300 bg-white/80 px-3 py-1.5 text-xs font-medium hover:bg-white">
+              Collaborate
+            </Link>
             <button onClick={() => setShowHow(!showHow)}
               className="rounded-full border border-stone-300 bg-white/80 px-3 py-1.5 text-xs font-medium hover:bg-white">
               {showHow ? "Hide pipeline" : "How this works"}
